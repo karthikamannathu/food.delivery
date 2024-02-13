@@ -1,0 +1,32 @@
+{
+  "name": "ServerSide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "dev": "nodemon ServerSide/index.js",
+    "start": "node ServerSide/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "big-json": "^3.2.0",
+    "cookie-parser": "^1.4.6",
+    "dist": "^0.1.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "mongoose-unique-validator": "^4.0.0",
+    "nodemon": "^3.0.1",
+    "punycode": "^2.3.0",
+    "stripe": "^14.11.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.1"
+  }
+}

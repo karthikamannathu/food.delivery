@@ -1,0 +1,41 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Oswald:wght@500&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Merriweather:wght@700&family=Oswald:wght@500&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+  
+}
+li{
+    list-style: none;
+    
+}
+a{ 
+    text-decoration: none;
+}
+.font{
+    font-family: 'Courgette', cursive;}
+.font_head{
+    font-family: 'Playfair Display', serif;
+}
+.font_regular{
+    /* font-family: 'Courgette', cursive;
+font-family: 'Oswald', sans-serif; */
+font-family: 'Courgette', cursive;
+font-family: 'Merriweather', serif;
+/* font-family: 'Oswald', sans-serif; */
+}
+
+}
