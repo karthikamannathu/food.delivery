@@ -3,7 +3,8 @@ import Stripe from "stripe";
 import dotenv from 'dotenv' ;
 import jsons from 'big-json'
 // import CartItems from "../Models/Order.Models.js";
-import OrderModels from "../Models/Order.Models.js";
+import OrderModels from "../Models/CartData.Models.js";
+import { storeDataExternally } from "../Controllar/Order.controller.js";
 
 dotenv.config();
 const stripe = Stripe(process.env.SECRET_KEY_STRIP)
@@ -67,23 +68,32 @@ router.post("/create-checkout-session", async (req, res) => {
 // Convert the array of objects to a JSON string
 // Assume this function saves the cart data to your database and returns a unique identifier
 
-const cartItem = cartItems.map((cartItems) => ({
-  id:cartItems.id,
-  name:cartItems.name,
- catogery:cartItems.catogery,
-  price:cartItems.price,
-   quantity: cartItems.amount,
-   imgeURL:cartItems.imageId }))
+// const cartItem = {id:cartItems.id,
+//   name:cartItems.name,
+//  catogery:cartItems.catogery,
+//   price:cartItems.price,
+//    quantity: cartItems.amount,
+//    imgeURL:cartItems.imageId }
 
-   const jsonString = JSON.stringify(cartItem)
-   const compressedData =  btoa(jsonString);
+// const cartItemString = JSON.stringify(cartItem);
+// const compressedData = btoa(cartItemString);
+// const decoded = atob(compressedData)
+// console.log(decoded,"decoded")
 
+    // Convert cart items to JSON string before storing externally
+    const jsonString = JSON.stringify(cartItems);
+
+    // Store cart data externally and get its unique identifier
+    const cartDataId = await storeDataExternally(jsonString);
 
 const customer = await stripe.customers.create({
-      metadata
-      :{userId: req.body.user._id,
-      CartsData:compressedData}
-  });
+    metadata: {
+        userId: req.body.user._id,
+        Carts:cartDataId
+    }
+});
+
+
   
             // Return the ID of the newly created customer
 
@@ -109,7 +119,7 @@ const customer = await stripe.customers.create({
      
       line_items: lineItems,
      
-      billing_address_collection: 'required', // Collect billing address automatically
+       billing_address_collection: 'required', // Collect billing address automatically
       // shipping_address_collection: {
       //   allowed_countries: ['IN'], // Allow shipping to all countries (change based on your requirements)
       // },
@@ -142,22 +152,24 @@ const customer = await stripe.customers.create({
 
 });
 
-const createOrder = async(customer,data,cartItems) =>{
-const Items = cartItems
+const createOrder = async(customer,data) =>{
+// const Items = cartItems
+// console.log(cartItems)
+// const products = Items.map((item) => {
+//   return {
+//     id:item.id,
+//    name:item.name,
+//   catogery:item.catogery,
+//    price:item.price,
+//     quantity: item.amount,
+//     imgeURL:item.imageId ,
+//   };
+// });
 
-const products = Items.map((item) => {
-  return {
-    id:item.id,
-   name:item.name,
-  catogery:item.catogery,
-   price:item.price,
-    quantity: item.amount,
-    imgeURL:item.imageId ,
-  };
-});
+
 const newOrder = new OrderModels({
   user: customer.metadata.userId,
-     Items: JSON.Parse(products),
+  products,
   customerId: data.customer,
   paymentIntentId: data.payment_intent,
   subtotal: data.amount_subtotal,
@@ -215,11 +227,14 @@ eventType = req.body.type;
   if(eventType == "checkout.session.completed")
   {
     
-stripe.customers
-.retrieve(data.customer)
-.then((customer)=>{
-  console.log(data.customer,"data of customer")
-  console.log(data,"dataass")
+    stripe.customers
+    .retrieve(data.customer)
+    .then((customer) => {
+        
+        console.log(customer)
+        
+        console.log(data,"Decoded data");
+    
 try{
    // CREATE ORDER
    createOrder(customer, data);

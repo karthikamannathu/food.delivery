@@ -2,20 +2,6 @@ import mongoose from "mongoose";
 
 
 
-// const cartItemSchema = new mongoose.Schema({
-//   id: { type: String, required: true },
-//   imageId: { type: String, required: true },
-//   name: { type: String, required: true },
-//   category: { type: String, required: true },
-//   price: { type: Number, required: true },
-//   amount: { type: Number, required: true }
-// });
-
-//  const CartItem = mongoose.model('CartItem', cartItemSchema);
-
-//   export default CartItemz
-
-
 const orderSchema = mongoose.Schema(
   {
     userId: { type: String, required: true },
@@ -31,9 +17,5 @@ const orderSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-
-
- 
-  
   const OrderModels   = mongoose.model("Order", orderSchema);
-  export default OrderModels
+  export default OrderModels;

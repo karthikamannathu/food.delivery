@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { BiCertification } from "react-icons/bi";
 import { addItem } from "../Redux/CartsItems/cartSlice";
 import StarRatingDisplay from "./Star";
+import LoadingAnimation from "./ShimmerUI";
 
 
 
@@ -42,8 +43,10 @@ let dispatch = useDispatch()
    console.log(" restaurantInfo",restaurantInfo);
 
   return (
+    <section>
+      {menuAllData?(
 <div className=" min-w-min flex  flex-col  border rounded-lg border-spacing-6 border-orange-500 shadow-md bg-orange-500 static ">
- <div className="  overflow-hidden  " >
+ <div className="  overflow-hidden" >
 <div className=" relative overflow-hidden border-orange-700 lg:flex " key={restaurantInfo?.id}>
 
  
@@ -71,12 +74,15 @@ let dispatch = useDispatch()
      </div>
       
       
-
+     
       <div className=" relative mt-5 grid gap-y-8  grid-cols-1 xl:grid-cols-4 lg:grid-cols-3  md:grid-cols-2  hover:text-white sm:gap-y-8 min-w-min ">
-        {menuAllData?.map((item,id) =>(
+       
+     
+       
+        {menuAllData.map((item,id) =>(
         
           <ul className=" mx-auto  w-[240px] lg:gap-4 md:gap-6 overflow-hidden bg-orange-600 sm:w-80 sm:full  text-orange-100"  key={id}  >
-          <li className="p-2">
+          <li className="p-2 animate__animated animate__fadeInTop">
             
         {item.imageId?
          (<img src={restImg + item?.imageId} className="" alt="Menu Item" />):
@@ -92,7 +98,7 @@ let dispatch = useDispatch()
 
             <div className="flex flex-col">
             <h2 className="object-contain font-bold overflow-hidden  text-lg  \r\n">{item?.name}</h2>
-            {/* <p className=" italic mt-2 hidden \n">{item?.description}</p>   */}
+            
             <p className=" italic font-semibold mt-2">{item?.category}</p>  
             </div>
             <div className="flex justify-end p-4">
@@ -110,11 +116,12 @@ let dispatch = useDispatch()
       ))
       
         }
+       
    
-  </div>
+  </div> 
     
- </div>
-
+ </div>):(<LoadingAnimation />)}
+ </section>
   )
 }
   
