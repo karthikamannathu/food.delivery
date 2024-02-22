@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { BiCertification } from "react-icons/bi";
 import { addItem } from "../Redux/CartsItems/cartSlice";
 import StarRatingDisplay from "./Star";
-import LoadingAnimation from "./ShimmerUI";
+import LoadingAnimation from "./LoadingUI";
 
 
 

@@ -85,7 +85,7 @@ router.post("/create-checkout-session", async (req, res) => {
 
     // Store cart data externally and get its unique identifier
     const cartDataId = await storeDataExternally(jsonString);
-
+console.log(cartDataId)
 const customer = await stripe.customers.create({
     metadata: {
         userId: req.body.user._id,
@@ -233,7 +233,7 @@ eventType = req.body.type;
         
         console.log(customer)
         
-        console.log(data,"Decoded data");
+        console.log(data);
     
 try{
    // CREATE ORDER

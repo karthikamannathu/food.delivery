@@ -5,8 +5,7 @@ import AllDisCatogery from "../Components/AllDishCategorys";
 import Banner from "../Components/Banner";
 
 import useOnline from "../Utils/Hooks/useOnline";
-import Error from "../Components/Error";
-import LoadingAnimation from "../Components/ShimmerUI"; // Import the LoadingAnimation component
+import LoadingAnimation from "../Components/LoadingUI.jsx"; // Import the LoadingAnimation component
 
 export default function Home() {
   const isOnline = useOnline();

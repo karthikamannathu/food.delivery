@@ -37,6 +37,7 @@ export const test = (req, res) => {
       next(error);
     }
   };
+
   
   export const deleteUser = async (req, res, next) => {
     console.log(req)
@@ -67,3 +68,5 @@ export const test = (req, res) => {
       next(error);
     }
   };
+
+  
