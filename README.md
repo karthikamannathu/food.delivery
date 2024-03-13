@@ -9,10 +9,14 @@ The website is meticulously designed to be completely responsive, ensuring a sea
 The Backend - Eduventure 
 
 Technologies Used    
-.Node.js 
-.Express
-.MongoDB
-.JSON Wed Tokens (JWT)
+.Node.js ,
+
+.Express,
+
+.MongoDB,
+
+.JSON Wed Tokens (JWT),
+
 .bcrypt.js
 
 
