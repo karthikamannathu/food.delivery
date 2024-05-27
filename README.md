@@ -24,11 +24,24 @@ Technologies Used
 
 Features
 
->Advanced Authentication: Implement JWT, Firebase, and Google OAuth for secure and seamless user access.
-> Real-world CRUD Operations: Create, read, update, and delete property listings using MongoDB.
-> User-friendly Features: Enhance the user experience with image uploads, property listing management, Stripe payment getway and more.
->Advanced Search Functionality: Implement cutting-edge search features to help users find what they're looking for.
->Deployment Made Easy: Learn to deploy your MERN real food delivery web for free using the 'render' platform.
+ 👉 Authentication System: A robust authentication system ensuring security and user privacy
+
+👉 Explore Page: Homepage for users to explore restaurants cards and filter feature add on category lists
+
+👉 Detailed menu list page: A detailed menu lists each resturants displaying simple content and rates for an immersive user experience
+
+👉 Profile Page: A user profile page showcasing pervious order and providing options to edit the profile
+
+👉Advanced Authentication: Implement JWT, Firebase, and Google OAuth for secure and seamless user access.
+
+👉 Advanced Search Functionality: Implement a user-friendly cutting-edge search features to help users find what they're looking for.
+
+👉 Cart add  Functionality: Provide users  select iteams add n our  carts its build in  redux 
+
+👉 Real-world CRUD Operations: Create, read, update, and delete property listings using MongoDB. 
+
+
+
 
 
 SCREENSHORT
