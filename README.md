@@ -48,8 +48,6 @@ SCREENSHORT
 
 ![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/6149096b-a071-4b97-8ec9-68eb0e7f6a6d)
 
-![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/24243906-8623-4abd-a337-8c7e11161bae)![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/05822f24-ca9b-4720-8b5c-10e0329d224b)
-
 ![Screenshot 2024-03-29 015150](https://github.com/karthikamannathu/food.delivery/assets/133741486/2e56a914-4825-412f-81f0-d931b7210f24)![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/dfde5424-3dfe-4d65-9dfc-32a666aa509d)
 
 ![Screenshot 2024-03-29 015409](https://github.com/karthikamannathu/food.delivery/assets/133741486/78a83e5a-8b66-4be5-ab00-a5e91d91c8af)
