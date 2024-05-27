@@ -47,6 +47,8 @@ Features
 SCREENSHORT
 
 ![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/6149096b-a071-4b97-8ec9-68eb0e7f6a6d)
+![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/7fbb52e5-c89e-4783-9260-07213d9f0dc7)
+![Uploading image.png…]()
 
 ![Screenshot 2024-03-29 015150](https://github.com/karthikamannathu/food.delivery/assets/133741486/2e56a914-4825-412f-81f0-d931b7210f24)![image](https://github.com/karthikamannathu/food.delivery/assets/133741486/dfde5424-3dfe-4d65-9dfc-32a666aa509d)
 
